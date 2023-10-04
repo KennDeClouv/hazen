@@ -123,7 +123,7 @@ nav ul li a:hover {
   /* color: var(--third); */
 }
 .search-form label {
-  padding: 8.5px;
+  padding: 8px;
   font-size: 1.2em;
   transition: all 0.4s;
 }
@@ -150,13 +150,13 @@ nav ul li a:hover {
 }
 .search-form input:focus {
   outline-style: none;
-  border-left: var(--third) 3px solid;
+  border-left: var(--fourth) 3px solid;
 }
 
 /* !  ============ CART =========  */
 .shopping-cart{
-  width: 40vw;
-  height: 90vh;
+  width: 40%;
+  height: 100vh;
   position: absolute;
   right: 0;
   top: 100%;
@@ -165,6 +165,7 @@ nav ul li a:hover {
   /* z-index: -100; */
   transform: translateX(100%);
   transition: all .4s ease-in-out;
+  min-width: 380px;
 }
 .cart-item{
   display: flex;
@@ -190,6 +191,11 @@ nav ul li a:hover {
 .remove{
   display: none;
 }
+
+@media screen and (max-width:660px) {
+  
+}
+
 
 /* !  ============ BURGER =========  */
 .burger {
@@ -228,7 +234,7 @@ nav ul li a:hover {
 .burger input:checked ~ span:nth-child(4) {
   transform: rotate(-45deg);
   transform-origin: 0 0;
-  translate: 0px 3px;
+  translate: 0px 2px;
 }
 
 /* !  ========= BURGER-RESPOND ======  */
@@ -438,6 +444,12 @@ nav ul li a:hover {
   color: var(--third);
   font-size: 1.6em;
   padding: 35px;
+  transition: all .4s ease-in-out;
+}
+
+.item:hover{
+  transform: scale(1.07);
+  cursor: pointer;
 }
 
 @media screen and (max-width: 660px) {
@@ -488,13 +500,17 @@ nav ul li a:hover {
 
 }
 .shop-icon a{
-    color: var(--third);
-    margin: 10px;
-    padding: 10px;
+  color: var(--third);
+  margin: 10px;
+  padding: 10px;
     border: var(--third) 1px solid;
     border-radius: 10px;
+    transition: all .4s ease-in-out;
 }
 
+.shop-icon a:hover{
+  background-color: var(--primer);
+}
 
 /* ?   =======     CONTACT    =======  */
 /* *   =======     CONTACT    =======  */
@@ -704,4 +720,116 @@ footer {
 .sos-icon i:hover {
   color: var(--third);
   transform: scale(0.9);
+}
+
+
+
+/*todo =======     MODAL    =======  */
+/**    =======     MODAL    =======  */
+/*!    =======     MODAL    =======  */
+/*? =======     MODAL    =======  */
+
+.modal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding: 110px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+.modal-content{
+  background-color: var(--third);
+  padding: 20px;
+  /* width: 80%; */
+  /* height: 100%; */
+  animation: Modal 0.5s ;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+}
+.closeee{
+  color: var(--second);
+  float: right;
+  font-size: 36px;
+}
+.closeee:hover,
+.closeee:focus{
+  color: var(--fourth);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cost{
+  background-color: var(--second);
+  color: var(--third);
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .4s ease-in-out;
+}
+.cost:hover{
+  background-color: var(--primer);
+}
+.modal-content .star{
+  padding: 10px;
+  align-items: center;
+  margin: auto;
+  margin-left: 5%;
+}
+
+.modal-des{
+  padding: 10px;
+  width: 86%;
+}
+.sa{
+  display: flex;
+}
+
+@keyframes Modal {
+  0%{
+    transform: translateY(100%);
+  }
+  100%{
+    transform: translateY(0%);
+  }
+}
+
+
+
+
+
+@media screen and (max-width:640px) {
+.modal{
+  font-size: 85%;
+  margin: auto;
+  /* padding: 10px; */
+  display: flex;
+}
+
+.sa{
+  display: flex;
+  flex-direction: column;
+}
+
+.sa img{
+  width: 50%;
+  justify-content: center;
+  min-width: 150px;
+  max-width: 185px;
+}
+
+.modal-content{
+  width: 90%;
+  margin: auto;
+  /* padding-top:150px; */
+}
+.cost{
+    font-size: 140%;
+  }
+  .sa .star{
+    padding: 10px;
+    left: 0;
+  }
 }

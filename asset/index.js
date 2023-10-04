@@ -52,3 +52,26 @@ const trashItem = document.querySelector('.cart-item');
 trashButton.addEventListener('click',function(){
     trashItem.classList.toggle('remove')
 })
+
+//Modal
+
+const modalButton = document.querySelector('.modal-button');
+const modalBox = document.querySelector('.modal-box');
+const close = document.querySelector('.close');
+
+modalButton.onclick = function(){
+    modalBox.computedStyleMap.display = "block";
+}
+
+var modal = document.getElementById("myModal");
+
+var btn = document.querySelector('.modal-button');
+
+var span = document.getElementsByClassName("closeee")[0];
+
+btn.onclick =function() {
+    modal.style.display = "block";
+} 
+span.onclick = function() {
+    modal.style.display = "none";
+}
