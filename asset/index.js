@@ -28,15 +28,16 @@ document.addEventListener('click', function (e) {
 })
 
 
-//Cart
+//todo == Cart ==
 
 
 const cartButton = document.querySelector('.cart-button')
-const cartBox =document.querySelector('.shopping-cart')
+const cartBox = document.querySelector('.shopping-cart')
 
 cartButton.addEventListener('click',function(){
     cartBox.classList.toggle('activee')
 })
+
 document.addEventListener('click', function (e) {
     if (!cartBox.contains(e.target) && !cartButton.contains(e.target)) {
         cartBox.classList.remove('activee');
@@ -44,34 +45,43 @@ document.addEventListener('click', function (e) {
 })
 
 
-//Trash
+//todo == Trash ==
 
-const trashButton = document.querySelector('.trash-button');
+const trashButton = document.querySelectorAll('.trash-button');
 const trashItem = document.querySelector('.cart-item');
 
-trashButton.addEventListener('click',function(){
-    trashItem.classList.toggle('remove')
+trashButton.forEach((btn) => {
+    btn.addEventListener('click',function(){
+        trashItem.style.display = "none";
+    })
+});
+
+// trashButton.forEach((btn) => {
+//     btn.addEventListener('click',function(){
+//         trashItem.forEach((btn) =>{
+//             trashItem.style.display = "none";
+//         })
+//     })
+// });
+
+//todo == Modal ==
+
+const modall = document.querySelector('#myModal');
+const btnn = document.querySelectorAll('.modal-button');
+const spann = document.querySelector('.closeee');
+
+btnn.forEach((btnn) => {
+    btnn.addEventListener('click',function(e){
+        modall.style.display = "block";
+        modall.style.transform = "translateY(0%)";
+        modall.style.opacity = "1";
+        e.preventDefault();
+    })
+});
+
+spann.addEventListener('click',function(e){
+    // modall.style.display = "none";
+    modall.style.transform = "translateY(100%)";
+    modall.style.opacity = "0";
+    
 })
-
-//Modal
-
-const modalButton = document.querySelector('.modal-button');
-const modalBox = document.querySelector('.modal-box');
-const close = document.querySelector('.close');
-
-modalButton.onclick = function(){
-    modalBox.computedStyleMap.display = "block";
-}
-
-var modal = document.getElementById("myModal");
-
-var btn = document.querySelector('.modal-button');
-
-var span = document.getElementsByClassName("closeee")[0];
-
-btn.onclick =function() {
-    modal.style.display = "block";
-} 
-span.onclick = function() {
-    modal.style.display = "none";
-}
